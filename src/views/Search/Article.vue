@@ -82,6 +82,10 @@
   padding-top: 20px;
   background-color: #F5F5F5;
   border: 1px solid #C4C4C4;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 .article-bar-wrapper {
@@ -107,10 +111,11 @@
 }
 
 .article-content-container {
+  margin-top: 100px;
   margin-bottom: 48px;
   
   .article-content-nav {
-    margin: 16px 0;
+    padding: 16px 0;
   }
 
   .article-content-wrapper {

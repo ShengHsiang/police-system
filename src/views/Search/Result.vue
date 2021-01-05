@@ -51,7 +51,13 @@
             <a class="title" @click="handleClickTitle(result)">{{ result.title }}</a>
           </h3>
           <div class="link">{{ result.link }}</div>
-          <p v-html="result.description" class="description"></p>
+          <TextHighlight 
+            :queries="matchKeyword[keyword]" 
+            class="description" 
+            highlightClass="keyword"
+          >
+            {{ result.description }}
+          </TextHighlight>
           <div v-if="result.shortage.length > 0" class="shortage">
             <span>缺少字詞：</span>
             <template v-for="(keyword, index) of result.shortage">
@@ -80,15 +86,27 @@
 <script>
 import results from '@/utils/results.js'
 import ScrollMethods from '@/mixins/scrollMethods.js'
+import TextHighlight from 'vue-text-highlight';
 
   export default {
     name: 'SearchResult',
+    components: {
+      TextHighlight
+    },
     mixins: [ ScrollMethods ],
     data () {
       return {
         keyword: '',
         results: results,
-        currentResultList: []
+        currentResultList: [],
+        matchKeyword: {
+          '林家杰 醫療疏失': [ '林家杰', '林', '家杰', '醫療疏失', '醫療' ],
+          '陳凱欣 醫療疏失': [ '陳凱欣', '陳', '凱欣', '醫療疏失', '醫療' ],
+          '惠安醫院 心臟移植': [ '惠安醫院', '惠安' ,'醫院', '心臟移植', '心臟', '移植' ],
+          '李子建 心臟移植': [ '李子建', '李' ,'子建', '心臟移植', '心臟', '移植' ],
+          '惠安醫院 李子建': [ '惠安醫院', '惠安' ,'醫院', '李子建', '李' ,'子建' ],
+          '李承文 心臟移植': [ '李承文', '李' ,'承文', '心臟移植', '心臟', '移植' ],
+        }
       }
     },
     mounted () {
@@ -120,6 +138,7 @@ import ScrollMethods from '@/mixins/scrollMethods.js'
         }
       },
       setCurrentResultList () {
+        document.title = `${this.keyword} - Search 搜尋`
         setTimeout(() => {
           this.currentResultList = this.results[this.keyword] || []
         }, 500);
@@ -148,7 +167,7 @@ import ScrollMethods from '@/mixins/scrollMethods.js'
             }
           })
         }
-      }
+      },
     }
   }
 </script>
@@ -228,7 +247,7 @@ import ScrollMethods from '@/mixins/scrollMethods.js'
     input {
       width: 100%;
       height: 100%;
-      font-size: 20px;
+      font-size: 18px;
       padding: 9px 20px;
       color: rgba(0, 0, 0, 0.87);
       border: none;
@@ -257,6 +276,7 @@ import ScrollMethods from '@/mixins/scrollMethods.js'
     cursor: pointer;
     border-bottom: 3px solid transparent;
     user-select: none;
+    color: rgba(0, 0, 0, 0.54);
     
     display: flex;
     align-items: center;
@@ -355,5 +375,7 @@ import ScrollMethods from '@/mixins/scrollMethods.js'
 <style lang="scss">
 .keyword {
   color: #FF1717;
+  background: transparent !important;
+  border-radius: 0 !important;
 }
 </style>
