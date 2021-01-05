@@ -52,7 +52,7 @@
           </h3>
           <div class="link">{{ result.link }}</div>
           <TextHighlight 
-            :queries="matchKeyword[keyword]" 
+            :queries="matchKeyword[$route.query.keyword]" 
             class="description" 
             highlightClass="keyword"
           >
@@ -134,7 +134,7 @@ import TextHighlight from 'vue-text-highlight';
       getKeyword () {
         const { keyword } = this.$route.query
         if (keyword) {
-          this.keyword = keyword
+          this.keyword = keyword.trim()
         }
       },
       setCurrentResultList () {
@@ -144,14 +144,14 @@ import TextHighlight from 'vue-text-highlight';
         }, 500);
       },
       handleSearch () {
-        if(this.keyword === this.$route.query.keyword) return
+        if(this.keyword.trim() === this.$route.query.keyword) return
 
         this.currentResultList = []
 
         this.$router.push({
           name: 'SearchResult',
           query: {
-            keyword: this.keyword
+            keyword: this.keyword.trim()
           }
         })
       },
