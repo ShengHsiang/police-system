@@ -67,6 +67,9 @@
     name: 'SearchArticle',
     data () {
       return {}
+    },
+    mounted () {
+      document.title = '有心人遺愛議長獨子換心- 秦視新聞網'
     }
   }
 </script>
