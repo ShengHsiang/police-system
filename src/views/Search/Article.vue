@@ -3,7 +3,7 @@
     <header class="article-header">
       <section class="article-bar-wrapper container">
         <div class="logo">
-          <img src="@/assets/articleLogo.svg" alt="">
+          <img src="@/assets/article/articleLogo.svg" alt="">
         </div>
         <div>
           <img src="@/assets/searchIcon.svg" alt="">
@@ -37,12 +37,12 @@
       <section class="article-content-wrapper">
         <h1>有心人遺愛議長獨子換心 - 秦視新聞網</h1>
         <div>
-          <img src="@/assets/articleIconBar.svg">
+          <img src="@/assets/article/articleIconBar.svg">
         </div>
 
         <figure>
-          <img src="@/assets/articlePic1.png">
-          <figcaption>新北市刑大偵四隊昨移送治平首惡李柏宏（中），他否認向建商強索保護費。（記者：XXX 攝）</figcaption>
+          <img src="@/assets/article/news_pic1.png">
+          <figcaption>父子示意照</figcaption>
         </figure>
 
         <div class="article-content-info">
@@ -70,6 +70,11 @@
     },
     mounted () {
       document.title = '有心人遺愛議長獨子換心- 秦視新聞網'
+      var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+      link.type = 'image/x-icon';
+      link.rel = 'shortcut icon';
+      link.href = '../news-icon.png';
+      document.getElementsByTagName('head')[0].appendChild(link);
     }
   }
 </script>

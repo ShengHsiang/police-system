@@ -21,6 +21,7 @@
       }
     },
     mounted () {
+      // 設定頭部 icon, title
       document.title = 'Search'
       var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
       link.type = 'image/x-icon';
