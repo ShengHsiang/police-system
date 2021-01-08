@@ -62,7 +62,7 @@ export default [
       '遠行聯合診所(2009－2011) | 地址：中央市西區南華路一段二弄65號',
       '中央惠安醫院(2011－2017) | 地址：中央市南區昌義路三段124號'
     ],
-    records: `<span>2018/03/27核發<a href="../../防治令_0106.pdf" target="_blank" class="link-red">防治令</a></span>`,
+    records: `<span>2018/03/27核發<a href="./防治令_0106.pdf" target="_blank" class="link-red">防治令</a></span>`,
     files: true
   },
   {

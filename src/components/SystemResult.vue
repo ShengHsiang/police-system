@@ -62,7 +62,8 @@ export default {
 
 <style lang="scss" scoped>
 $main-color: #33649b;
-$hover-color: #69B0FF;
+$hover-border: #3D6FA8;
+$hover-bgc: #1A2842;
 
 .result-wrapper {
   width: 727px;
@@ -73,13 +74,31 @@ $hover-color: #69B0FF;
   position: relative;
   display: flex;
 
-  &::after {
+  &:hover {
+    border-color: $hover-border;
+    background-color: $hover-bgc;
+    filter: drop-shadow(4px 4px 6px #000000);
+    cursor: pointer;
+
+    li {
+      border-color: $hover-border;
+    }
+
+    .result-content-wrapper {
+      border-color: $hover-border;
+    }
+
+    .label {
+      border-color: $hover-border;
+    }
+  }
+
+  /* &::after {
     content: "";
     position: absolute;
     top: -21px;
     left: -3px;
 
-    /* 設定 width、height 可更好理解原理 */
     height: 9px;
     width: 218px;
 
@@ -87,25 +106,20 @@ $hover-color: #69B0FF;
     border-style: solid solid solid solid;
     border-radius: 2px;
     border-width: 9px;
-  }
+  } */
 
-  &:hover {
-    border-color: $hover-color;
-    cursor: pointer;
-  }
-
-  &:hover::after {
+  /* &:hover::after {
     border-color: transparent transparent $hover-color transparent;
-  }
+  } */
 }
 
 .result-avatar-wrapper {
   width: 138px;
+  
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 2px;
   }
 }
 

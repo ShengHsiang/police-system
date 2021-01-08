@@ -6,7 +6,12 @@
       </div>
     </header>
     <div class="system-search-wrapper container">
-      <input type="text" />
+      <div class="input-group">
+        <input type="text" />
+        <div class="icon-wrapper">
+          <img class="icon" src="@/assets/searchIconBlue.svg" />
+        </div>
+      </div>
     </div>
     <main class="main-section container">
       <div>
@@ -32,7 +37,7 @@ export default {
     var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
     link.type = 'image/x-icon';
     link.rel = 'shortcut icon';
-    link.href = '../system-icon.png';
+    link.href = './system-icon.png';
     document.getElementsByTagName('head')[0].appendChild(link);
   },
   data() {
@@ -72,20 +77,37 @@ $main-color: #33649b;
   display: flex;
   justify-content: flex-end;
 
-  input {
-    width: 334px;
-    height: 48px;
-    font-size: 18px;
-    font-weight: 500;
-    color: $main-color;
-    padding: 12px 14px;
-    border: 2px solid $main-color;
-    border-radius: 8px;
-    background: linear-gradient(
-      180deg,
-      #142035 0%,
-      rgba(20, 32, 53, 0.9) 130.42%
-    )
+  .input-group {
+    position: relative;
+
+    input {
+      width: 334px;
+      height: 48px;
+      font-size: 18px;
+      font-weight: 500;
+      color: $main-color;
+      padding: 12px 14px;
+      border: 2px solid $main-color;
+      border-radius: 8px;
+      background: linear-gradient(
+        180deg,
+        #142035 0%,
+        rgba(20, 32, 53, 0.9) 130.42%
+      )
+    }
+
+    & .icon-wrapper {
+      position: absolute;
+      right: 12px;
+      top: 0;
+      bottom: 0;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      cursor: pointer;
+    }
   }
 }
 
