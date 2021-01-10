@@ -86,11 +86,10 @@ $hover-color: #69B0FF;
 }
 
 .system-content-container {
-  margin-top: calc(73px - 30px);
+  margin-top: calc(73px + 96px);
   min-height: calc(100vh - 73px);
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .system-content-box {
@@ -149,6 +148,7 @@ $hover-color: #69B0FF;
 .form-action {
   display: flex;
   justify-content: center;
+  margin-top: 32px;
 
   button {
     width: 112px;
