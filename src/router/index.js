@@ -15,9 +15,18 @@ const routes = [
     component: () => import('../views/System/Search.vue')
   },
   {
+    path: '/system/result',
+    name: 'SystemResult',
+    component: () => import('../views/System/Result.vue')
+  },
+  {
     path: '/system/result/:id',
     name: 'PersonInfomation',
     component: () => import('../views/System/PersonInfomation.vue')
+  },
+  {
+    path: '/system',
+    redirect: '/system/login'
   },
   {
     path: '/',
@@ -33,11 +42,7 @@ const routes = [
     path: '/article/:id',
     name: 'SearchArticle',
     component: () => import('../views/Search/Article.vue')
-  },
-  // {
-  //   path: '/',
-  //   redirect: '/system/login'
-  // }
+  }
 ]
 
 const router = new VueRouter({
