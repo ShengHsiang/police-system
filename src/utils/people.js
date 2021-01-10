@@ -50,7 +50,7 @@ export default [
   {
     name: "陳凱欣",
     id: "E284360062",
-    birthday: "1984 / 08 / 04",
+    birthday: "1985 / 08 / 04",
     phone: "",
     gender: '女',
     age: '36',
