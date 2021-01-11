@@ -64,6 +64,7 @@
 <style lang="scss" scoped>
 $main-color: #33649b;
 $hover-color: #69B0FF;
+$bg-color: #142035;
 
 .container {
   width: 1280px;
@@ -71,13 +72,13 @@ $hover-color: #69B0FF;
 }
 
 .system-container {
-  width: 100vw;
   min-height: 100vh;
   background: linear-gradient(
     180deg,
-    #142035 0%,
+    $bg-color 0%,
     rgba(20, 32, 53, 0.9) 130.42%
   );
+  padding-bottom: 96px;
 }
 
 .system-header {
@@ -86,17 +87,23 @@ $hover-color: #69B0FF;
 }
 
 .system-content-container {
-  margin-top: calc(73px + 96px);
-  min-height: calc(100vh - 73px);
+  margin-top: calc(73px + 34px);
+  min-height: 542px;
   display: flex;
   justify-content: center;
+  background: url('../../assets/bgLogo.svg');
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .system-content-box {
   width: 744px;
   height: 416px;
+  background-color: $bg-color;
+  opacity: 80%;
   border: 2px solid rgba(51, 100, 155, 0.8);
   border-radius: 8px;
+  margin-top: 63px;
 }
 
 .system-content-box-header {
@@ -109,6 +116,7 @@ $hover-color: #69B0FF;
     width: 25%;
     color: #ffffff;
     background: $main-color;
+    cursor: pointer;
 
     &.active {
       background: transparent;
