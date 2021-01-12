@@ -2,7 +2,7 @@
   <div class="system-container">
     <header class="system-header">
       <div class="container">
-        <img src="@/assets/systemTop.svg" alt="">
+        <img src="@/assets/systemSearchTop.svg" alt="">
       </div>
     </header>
 
@@ -47,6 +47,14 @@
       return {
         name: ''
       }
+    },
+    mounted () {
+      document.title = '警政署'
+      var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+      link.type = 'image/x-icon';
+      link.rel = 'shortcut icon';
+      link.href = './system-icon.png';
+      document.getElementsByTagName('head')[0].appendChild(link);
     },
     methods: {
       handleSearch () {
@@ -100,10 +108,11 @@ $bg-color: #142035;
   width: 744px;
   height: 416px;
   background-color: $bg-color;
-  opacity: 80%;
+  opacity: 0.8;
   border: 2px solid rgba(51, 100, 155, 0.8);
   border-radius: 8px;
   margin-top: 63px;
+  overflow: hidden;
 }
 
 .system-content-box-header {

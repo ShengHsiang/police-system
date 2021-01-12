@@ -55,12 +55,13 @@ export default {
 .login-container {
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(180deg, #142035 0%, rgba(20, 32, 53, 0.9) 130.42%);
+  background: radial-gradient(82.92% 82.92% at 50% 47.5%, rgba(34, 49, 74, 0.9) 0%, #142035 100%), radial-gradient(52.5% 52.5% at 50% 47.5%, rgba(34, 49, 74, 0) 0%, #000000 89.06%);
 
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 
 .login-wrapper {
   min-width: 300px;

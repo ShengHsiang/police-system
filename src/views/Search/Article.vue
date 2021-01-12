@@ -36,18 +36,21 @@
 
       <section class="article-content-wrapper">
         <h1>有心人遺愛議長獨子換心 - 秦視新聞網</h1>
-        <div>
+        <!-- <div>
           <img src="@/assets/article/articleIconBar.svg">
-        </div>
+        </div> -->
 
         <figure>
           <img src="@/assets/article/news_pic1.png">
-          <figcaption>父子示意照</figcaption>
+          <figcaption>
+            議長李承文兒子成功換心後致力參與各項醫療公益回饋社會
+            <span style="margin-left: 16px;">撰稿：張綺晏</span>
+          </figcaption>
         </figure>
 
         <div class="article-content-info">
           <div class="time">2020/12/30  04:10</div>
-          <div class="gray">撰稿：張綺晏</div>
+          <div class="gray"></div>
         </div>
 
         <div class="article-content">
@@ -120,7 +123,7 @@
 
 .article-content-container {
   margin-top: 100px;
-  margin-bottom: 48px;
+  margin-bottom: 165px;
   
   .article-content-nav {
     padding: 16px 0;
@@ -130,36 +133,37 @@
     border: 0.5px solid rgba(0, 0, 0, 0.38);
     min-height: 1200px;
     padding: 48px 72px;
+    
 
     h1 {
       font-size: 28px;
       font-weight: 500;
       line-height: 39px;
+      margin-bottom: 16px;
     }
 
     figure {
-      margin-bottom: 24px;
+      margin-bottom: 14px;
 
       figcaption {
-        text-align: center;
         margin-top: 8px;
+        padding: 0 12px;
+        background-color: rgba(0, 0, 0, .08);
+
         font-size: 14px;
+        color: rgba(0, 0, 0, .87);
+        text-align: left;
+        line-height: 30px;
       }
     }
 
     .article-content-info {
       display: flex;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.54);
       font-size: 14px;
-      padding-bottom: 16px;
-      margin-bottom: 16px;
+      margin-bottom: 8px;
 
       .time {
         margin-right: 30px;
-        color: rgba(0, 0, 0, 0.54);
-      }
-
-      .gray {
         color: rgba(0, 0, 0, 0.54);
       }
     }

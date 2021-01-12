@@ -1,6 +1,6 @@
 <template>
   <div class="system-container">
-    <header class="system-header">
+    <header class="system-header" @click="$router.push({ name: 'SystemSearch' })">
       <div class="container">
         <img src="@/assets/systemTop.svg" alt="">
       </div>
@@ -11,8 +11,9 @@
         <div style="margin-right: 18px">
           <img src="@/assets/personPage/search.svg" alt="" />
         </div>
-        <div @click="handlePrintFiles" class="print">
-          <!-- <img src="@/assets/personPage/print.svg" alt="" /> -->
+        <div @click="handlePrintFiles" class="print" @mouseenter="isHoverPrintIcon = true" @mouseleave="isHoverPrintIcon = false">
+          <img v-show="!isHoverPrintIcon" src="@/assets/personPage/print.svg" alt="" />
+          <img v-show="isHoverPrintIcon" src="@/assets/personPage/printActive.svg" alt="" />
         </div>
       </div>
     </div>
@@ -82,6 +83,7 @@ export default {
   name: "PersonInfomation",
   data () {
     return {
+      isHoverPrintIcon: false,
       person: {
         name: "",
         id: "",
@@ -164,11 +166,11 @@ $hover-color: #69B0FF;
       width: 32px;
       height: 32px;
       cursor: pointer;
-      background-image: url('../../assets/personPage/print.svg');
+      /* background-image: url('../../assets/personPage/print.svg');
 
       &:hover {
         background-image: url('../../assets/personPage/printActive.svg');
-      }
+      } */
     }
   }
 }
